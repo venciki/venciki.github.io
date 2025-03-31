@@ -2,7 +2,6 @@ module.exports = {
     title: 'XXX的博客',
     description: 'YYY',
     theme: 'reco',
-    base: '/venciki.github.io/',
     themeConfig: {
         type: "blog",
         logo: "/naruto.jpeg",
