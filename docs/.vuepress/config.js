@@ -32,7 +32,7 @@ module.exports = {
         //       ]
         //     } 
         // ]
-        author: "Venciki",
+        author: "venciki",
         blogConfig: {
             category: {
               location: 2, // 在导航栏菜单中所占的位置，默认2
