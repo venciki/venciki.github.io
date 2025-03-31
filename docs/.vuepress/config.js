@@ -1,6 +1,6 @@
 module.exports = {
-    title: 'XXX的博客',
-    description: 'YYY',
+    title: 'Venciki',
+    description: 'Welcome to Venciki‘s Site',
     theme: 'reco',
     themeConfig: {
         type: "blog",
@@ -9,10 +9,9 @@ module.exports = {
         nav: [
             { text: "首页", link: "/" },
             {
-                text: "Venciki Blog",
+                text: "Links",
                 items: [
-                    { text: "掘金", link: "https://juejin.cn" },
-                    { text: "Github", link: "https://github.com" }
+                    { text: "Github", link: "https://github.com/venciki" },
                 ]
             }
         ],
