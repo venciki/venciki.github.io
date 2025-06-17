@@ -1,0 +1,111 @@
+---
+title: leetcodeDay1
+date: 2025-06-17
+categories:
+  - 前端
+tags:
+  - JavaScript
+  - 算法
+---
+
+# 算法day1
+
+## 合并两个有序数组
+
+**描述**
+
+```
+给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
+
+请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
+```
+
+
+**示例 1：**
+
+```js
+输入：nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+输出：[1,2,2,3,5,6]
+解释：需要合并 [1,2,3] 和 [2,5,6] 。
+```
+
+### Code
+
+```js
+const merge = (nums1, m, nums2, n) => {
+    let index1 = m - 1;
+    let index2 = n - 1;
+    let tail = m + n - 1;
+
+    // 先过一遍，大的放到最后
+    while (index1 >= 0 && index2 >= 0) {
+        if (nums1[index1] > nums2[index2]) {
+          nums1[tail] = nums1[index1];
+          index1--;
+        }
+        else {
+          nums1[tail] = nums2[index2];
+          index2--;
+        }
+        tail--;
+    }
+
+    // 如果tail还没过完，index1还为过完，将剩下的index1直接倒序插入（数组本身是有序的）
+    while (index1 >= 0 && tail >= 0) {
+      nums1[tail] = nums1[index1];
+      index1--;
+      tail--;
+    }
+
+    // 如果tail还没过完，index2还为过完，将剩下的index2直接倒序插入（数组本身是有序的）
+    while (index2 >= 0 && tail >= 0) {
+      nums1[tail] = nums2[index2];
+      index2--;
+      tail--;
+    }
+}
+```
+
+
+## 移除元素
+
+**描述**
+
+给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素。元素的顺序可能发生改变。然后返回 nums 中与 val 不同的元素的数量。
+
+假设 nums 中不等于 val 的元素数量为 k，要通过此题，您需要执行以下操作：
+
+更改 nums 数组，使 nums 的前 k 个元素包含不等于 val 的元素。nums 的其余元素和 nums 的大小并不重要。
+返回 k。
+
+**示例 1：**
+
+```
+输入：nums = [3,2,2,3], val = 3
+输出：2, nums = [2,2,_,_]
+解释：你的函数函数应该返回 k = 2, 并且 nums 中的前两个元素均为 2。
+你在返回的 k 个元素之外留下了什么并不重要（因此它们并不计入评测）。
+```
+
+### Code
+
+```javascript
+var removeElement = function(nums, val) {
+    // 存放的索引
+    let left = 0;
+    let len = nums.length;
+
+    for (let right = 0; right < len; right++) {
+      // 遍历数组，遇到与val不相等的，按left索引存到nums中
+      if (nums[right] !== val) {
+        nums[left] = nums[right];
+        // 每存一次 索引+1
+        left++;
+      }
+    }
+
+    // 返回最终的索引 （这里没有+1是因为，每次存完之后left都会+1，所以这个值就等于数组的长度）
+    return left;
+}
+```
+

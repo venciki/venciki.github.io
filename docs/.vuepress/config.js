@@ -31,7 +31,7 @@ module.exports = {
         //         { title: "第二篇", path: "/blogs/2" },
         //       ]
         //     } 
-        // ]
+        // ],
         author: "venciki",
         blogConfig: {
             category: {
