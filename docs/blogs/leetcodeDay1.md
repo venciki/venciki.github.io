@@ -2,10 +2,10 @@
 title: leetcodeDay1
 date: 2025-06-17
 categories:
-  - 前端
+  - 算法
 tags:
   - JavaScript
-  - 算法
+  - leetcode
 ---
 
 # 算法day1
