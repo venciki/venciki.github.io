@@ -1,6 +1,6 @@
 module.exports = {
     title: 'Venciki',
-    description: 'Welcome to Venciki‘s Site',
+    description: 'Venciki的博客',
     theme: 'reco',
     themeConfig: {
         type: "blog",
@@ -54,7 +54,7 @@ module.exports = {
           "cursor-effects",
           {
             size: 4, // size of the particle, default: 2
-            shape: "star", // ['star' | 'circle'], // shape of the particle, default: 'star'
+            shape: "circle", // ['star' | 'circle'], // shape of the particle, default: 'star'
             zIndex: 999999999, // z-index property of the canvas, default: 999999999
           },
         ],
