@@ -6,6 +6,7 @@ categories:
 tags:
   - JavaScript
   - leetcode
+sticky: 1
 ---
 
 # 算法day1

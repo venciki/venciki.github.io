@@ -44,8 +44,8 @@ const removeDuplicates = function(nums) {
     let slow = 1;
     let fast = 1;
     const len = nums.length;
-    
-    while(fast < len) {
+
+    while (fast < len) {
         if (nums[fast] !== nums[fast - 1]) {
             nums[slow] = nums[fast];
             slow++;
@@ -88,7 +88,7 @@ const removeDuplicates = function(nums) {
     let fast = 2;
     const len = nums.length;
 
-    while(fast < len) {
+    while (fast < len) {
         if (nums[fast] !== nums[slow - 2]) {
             nums[slow] = nums[fast];
             slow++;
