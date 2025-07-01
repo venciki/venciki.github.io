@@ -15,5 +15,8 @@
     "vuepress": "^1.9.10",
     "vuepress-plugin-cursor-effects": "^1.1.6",
     "vuepress-theme-reco": "^1.6.17"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security"
   }
 }
