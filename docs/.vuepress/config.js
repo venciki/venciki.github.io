@@ -58,5 +58,15 @@ module.exports = {
             zIndex: 999999999, // z-index property of the canvas, default: 999999999
           },
         ],
+        [
+          'vuepress-plugin-right-anchor',
+          {
+            showDepth: 2, // 显示 H1、H2 和 H3 标题
+            expand: {
+              trigger: 'click',
+              open: true // 默认关闭
+            }
+          }
+        ]
      ]
 }
