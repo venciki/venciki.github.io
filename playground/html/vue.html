@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        function Vue() {
+            this.$data = {a: 1};
+            this.el = document.getElementById('app');
+            this.vritualDom = '';
+            this.observer(this.$data);
+            this.render();
+        }
+        /* defineProperty 版本 */
+        // Vue.prototype.observer = function(obj) {
+        //     var value = null;
+        //     var self = this;
+        //     for (var key in obj) {
+        //         value = obj[key];
+        //         if (typeof value === 'object') {
+        //             this.observer(value);
+        //         }
+        //         else {
+        //             Object.defineProperty(obj, key, {
+        //                 get: function() {
+        //                     return value;
+        //                 },
+        //                 set: function(newValue) {
+        //                     value = newValue;
+        //                     self.render();
+        //                 }
+        //             })
+        //         }
+
+        //     }
+        // }
+
+        /* Proxy 版本 */
+        Vue.prototype.observer = function(obj) {
+            var self = this;
+            this.$data = new Proxy(this.$data, {
+                get: function(target, key) {
+                    return target[key];
+                },
+                set: function(target, key, newValue) {
+                    target[key] = newValue;
+                    self.render();
+                }
+            })
+        }
+
+        Vue.prototype.render = function() {
+            this.virtualDom = `I am ${this.$data.a}`;
+            this.el.innerHTML = this.virtualDom;
+        }
+
+
+        const vm = new Vue();
+        vm.$data.a = 123;
+        // 可以在浏览器控制台 vm.$data.a = 222;
+    </script>
+</body>
+</html>
