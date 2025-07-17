@@ -113,7 +113,6 @@ const deepClone = (target, map = new Map()) => {
     }
 
     return resultObj;
-
 }
 
 let obj = {a: 123};
