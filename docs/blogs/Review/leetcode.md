@@ -396,4 +396,40 @@ var rotate = function(nums, k) {
 }
 ```
 
+## 除自身以外数组的乘积
 
+```
+示例 1:
+输入: nums = [1,2,3,4]
+输出: [24,12,8,6]
+
+示例 2:
+输入: nums = [-1,1,0,-3,3]
+输出: [0,0,9,0,0]
+```
+
+```js
+var productExceptSelf = function(nums) {
+  // 题目等价于前n项乘积 * 后n项乘积
+
+  // 第一项的前 n 项乘积为 1
+  const res = [1];
+
+  for (let i = 1; i < nums.length; i++) {
+    // 前前n项乘积 * 当前项
+    res[i] = res[i - 1] * nums[i - 1];
+  }
+
+  // 后n项乘积，响应的最后一项的后n项乘积为1
+  let right = 1;
+
+  for (let j = nums.length - 1; j >= 0; j--) {
+    // 结果就是 前n项乘积 * 后n项乘积；
+    res[j] *= right;
+    // 当前项 * 后后n项乘积
+    right *= nums[j]
+  }
+
+  return res;
+}
+```
