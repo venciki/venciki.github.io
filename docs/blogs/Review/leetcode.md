@@ -1,10 +1,8 @@
 ---
 title: leetcode集合
 date: 2026-01-01
-categories:
-  - 算法
 tags:
-  - JavaScript
+  - RV
 ---
 
 ## 两数之和
