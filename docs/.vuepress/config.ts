@@ -15,9 +15,11 @@ export default defineUserConfig({
       name: "venciki",
       url: "https://github.com/venciki",
     },
+    favicon: "/naruto.jpeg",
     logo: "/naruto.jpeg",
     repo: "venciki/venciki.github.io",
     docsDir: "docs",
+    navbarAutoHide: "mobile",
 
     navbar: [
       { text: "首页", link: "/" },
@@ -33,6 +35,7 @@ export default defineUserConfig({
       name: "venciki",
       avatar: "/naruto.jpeg",
       description: "记录前端、算法与日常思考",
+      articlePerPage: 8,
       medias: {
         GitHub: "https://github.com/venciki",
       },
