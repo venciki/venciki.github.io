@@ -1,9 +1,9 @@
 ---
 title: HTTP集合
 date: 2026-01-01
-categories:
+category:
   - 网络协议
-tags:
+tag:
   - HTTP
 ---
 

@@ -3,3 +3,7 @@ node_modules/
 
 # dist
 docs/.vuepress/dist
+
+# VuePress cache
+docs/.vuepress/.cache/
+docs/.vuepress/.temp/
