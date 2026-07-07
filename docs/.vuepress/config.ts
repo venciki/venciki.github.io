@@ -34,7 +34,7 @@ export default defineUserConfig({
     blog: {
       name: "venciki",
       avatar: "/naruto.jpeg",
-      description: "记录前端、算法与日常思考",
+      description: "前端开发者，记录技术、实践与持续思考",
       articlePerPage: 8,
       medias: {
         GitHub: "https://github.com/venciki",
@@ -42,7 +42,9 @@ export default defineUserConfig({
     },
 
     plugins: {
-      blog: true,
+      blog: {
+        excerptLength: 220,
+      },
     },
 
     displayFooter: true,
