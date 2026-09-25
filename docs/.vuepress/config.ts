@@ -20,12 +20,13 @@ export default defineUserConfig({
     repo: "venciki/venciki.github.io",
     docsDir: "docs",
     navbarAutoHide: "mobile",
+    darkmode: "enable",
 
     navbar: [
       { text: "首页", link: "/" },
-      { text: "文章", link: "/article/" },
-      { text: "分类", link: "/category/" },
-      { text: "标签", link: "/tag/" },
+      { text: "漫游", link: "/article/" },
+      { text: "主题", link: "/category/" },
+      { text: "索引", link: "/tag/" },
     ],
 
     sidebar: false,
